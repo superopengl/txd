@@ -10,11 +10,12 @@ module.exports = {
             javascriptEnabled: true,
             modifyVars: {
               '@primary-color': '#22075e',
-              '@font-size-base': '16px',
+              '@font-size-base': '20px',
               '@height-base': '40px',
               '@height-lg': '48px',
               '@height-sm': '32px',
               '@border-radius-base': '4px',
+              'font-size-sm': '16px'
             }
           }
         }

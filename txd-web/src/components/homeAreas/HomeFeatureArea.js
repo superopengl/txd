@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { BulbOutlined, DollarCircleOutlined } from '@ant-design/icons';
 import { MailOutlined, PhoneOutlined, WechatOutlined } from '@ant-design/icons';
 import { Trans } from 'react-i18next';
+import { MdLanguage } from "react-icons/md";
 
 
 const SubTitle = styled(Typography.Title)`
@@ -41,7 +42,8 @@ class HomeFeatureArea extends React.Component {
       style: {
         backgroundColor: '#22075e',
         color: '#f0f0f0',
-        paddingBottom: 0
+        paddingBottom: 0,
+        padding: '6rem 0'
       }
     }
 
@@ -60,25 +62,12 @@ class HomeFeatureArea extends React.Component {
           <Trans i18nKey="home.contact" />
           </SubTitle>
           <section>
-            <table style={{ textAlign: 'left', margin: 'auto' }}>
-              <tbody>
-                <tr>
-                  <td style={{ width: '5rem', textAlign: 'right', paddingRight: '8px' }}><MailOutlined /> <Trans i18nKey="home.contact.email" /></td>
-                  <td><a href="mailto:mr.shaojun@gmail.com">mr.shaojun@gmail.com</a></td>
-                </tr>
-                <tr>
-                  <td style={{ width: '5rem', textAlign: 'right', paddingRight: '8px' }}><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /></td>
-                  <td>0405581228</td>
-                </tr>
-                <tr>
-                  <td style={{ width: '5rem', textAlign: 'right', paddingRight: '8px' }}><WechatOutlined /> <Trans i18nKey="home.contact.wechat" /></td>
-                  <td>superopengl</td>
-                </tr>
-                <tr>
-                  <td colSpan="2" style={{ textAlign: 'center', padding: '4px' }}><img src="images/wechat_logo_qr.jpg" alt="wechat account: superopengl" width={160} height="auto" /></td>
-                </tr>
-              </tbody>
-            </table>
+          <p level={4} style={{fontSize: '1.2rem'}}><MdLanguage style={{position: 'relative', top: 3}} /> Website : <a href="https://www.techseeding.com.au/" style={{color: 'white'}}>https://www.techseeding.com.au</a></p>
+
+            <p><MailOutlined /> <Trans i18nKey="home.contact.email" /> : <a href="mailto:mr.shaojun@gmail.com">mr.shaojun@gmail.com</a></p>
+            <p><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /> : 04 0558 1228</p>
+            <p><WechatOutlined /> <Trans i18nKey="home.contact.wechat" /> : superopengl</p>
+            {/* <p><img src="images/wechat_logo_qr.jpg" alt="wechat account: superopengl" width={160} height="auto" /></p> */}
           </section>
 
         </InfoCard>

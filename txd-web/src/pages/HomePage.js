@@ -11,9 +11,13 @@ import { RiComputerLine } from "react-icons/ri";
 import { GoDeviceMobile, GoDatabase } from "react-icons/go";
 import { AiOutlineWechat, AiOutlineMessage } from "react-icons/ai";
 import { GiMeshNetwork, GiTeamIdea } from "react-icons/gi";
+import { GrLanguage } from "react-icons/gr";
+import { MdLanguage } from "react-icons/md";
 import windowSize from 'react-window-size';
 import ContactForm from 'components/ContactForm';
 import { Trans } from 'react-i18next';
+import { MailOutlined, PhoneOutlined, WechatOutlined } from '@ant-design/icons';
+
 import * as queryString from 'query-string';
 
 const { Content } = Layout;
@@ -40,7 +44,7 @@ const PosterContainer = styled.div`
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
-background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0, 0, 0, 0.4)),url("images/poster.jpg");
+background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0, 0, 0, 0.7)),url("images/poster.jpg");
 width: 100%;
 min-height: 200px;
 display: flex;
@@ -242,7 +246,7 @@ class HomePageRaw extends React.Component {
         44;
 
     const { origin } = queryString.parse(this.props.location.search);
-    const shouldShowContact = true || origin !== 'wechat-app';
+    const shouldShowContact = false && origin !== 'wechat-app';
 
     return (
       <LayoutStyled>
@@ -258,21 +262,34 @@ class HomePageRaw extends React.Component {
         >
           <ContactForm ref={this.contactFormRef} onDone={this.handleContactCancel}></ContactForm>
         </Modal>
-        <HomeHeader onClickContact={() => this.openContactForm()}></HomeHeader>
+        {/* <HomeHeader onClickContact={() => this.openContactForm()}></HomeHeader> */}
         {/* <BarStyled></BarStyled> */}
         <ContentStyled >
           <section id="home">
-            <PosterContainer style={{ height: posterHeight, position: 'relative' }}>
+            <PosterContainer style={{ height: 900, position: 'relative' }}>
+              <img src="logo-bw.png" height="auto" width="600" alt="TECHSEEDING LOGO"></img>
               <Title style={{ fontSize: catchPhraseSize, marginTop: '2rem' }}><Trans i18nKey="home.slogan" /></Title>
-              <Title level={2} style={{ marginTop: 0, fontWeight: 400, fontSize: Math.max(catchPhraseSize * 0.6, 14) }}>
+              <Title level={2} style={{ marginTop: 0, fontWeight: 400, fontSize: '1.8rem' }}>
                 <Trans i18nKey="home.catch_phrase" />
               </Title>
+              <Row gutter={40} style={{marginTop: '6rem'}}>
+                <Col>
+                <Title level={4} style={{fontSize: '1.2rem'}}><img src="images/wechat_logo_qr.jpg" alt="wechat account: superopengl" width={240} height="auto" /></Title>
+                </Col>
+                <Col style={{textAlign: 'left', paddingTop: '2rem'}}>
+                <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><MdLanguage style={{position: 'relative', top: 3}} /> Website : <a href="https://www.techseeding.com.au/" style={{color: 'white'}}>https://www.techseeding.com.au</a></Title>
+                <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><MailOutlined /> <Trans i18nKey="home.contact.email" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a href="mailto:mr.shaojun@gmail.com" style={{color: 'white'}}>mr.shaojun@gmail.com</a></Title>
+                <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /> &nbsp;&nbsp;&nbsp;: 04 0558 1228</Title>
+                <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><WechatOutlined /> <Trans i18nKey="home.contact.wechat" /> : superopengl</Title>
+                </Col>
+              </Row>
               {shouldShowContact && <ContactButton type="primary" shape="round" size="large" onClick={() => this.openContactForm()}>
                 <Trans i18nKey="button.contact_us" />
               </ContactButton>}
+
             </PosterContainer>
           </section>
-          <section id="services">
+          <section id="services" style={{padding: '3rem 0'}}>
             <Row>
               {tileData.map((t, i) => {
                 return (
@@ -294,7 +311,7 @@ class HomePageRaw extends React.Component {
             <HomeFeatureArea style={{ paddingBottom: 0 }}></HomeFeatureArea>
           </section>
         </ContentStyled>
-        <HomeFooter></HomeFooter>
+        {/* <HomeFooter></HomeFooter> */}
         {shouldShowContact && <Affix style={{ position: 'fixed', bottom: 30, right: 30 }}>
           <AffixContactButton type="primary" shape="circle" size="large" onClick={() => this.openContactForm()}>
             <AiOutlineMessage size={36} />
