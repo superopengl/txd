@@ -274,12 +274,23 @@ class HomePageRaw extends React.Component {
               </Title>
               <Row gutter={40} style={{marginTop: '6rem'}}>
                 <Col>
-                <Title level={4} style={{fontSize: '1.2rem'}}><img src="images/wechat_logo_qr.jpg" alt="wechat account: superopengl" width={240} height="auto" /></Title>
+                <Row gutter={10}>
+                  <Col>
+                  <img src="images/label_url_qr.jpg" alt="wechat account: superopengl" width={200} height="auto" />
+                  </Col>
+                  <Col>
+
+                  <img src="images/label_wechat_app_qr.jpg" alt="wechat account: superopengl" width={200} height="auto" />
+                  </Col>
+                  <Col>
+                  <img src="images/label_wechat_contact_qr.jpg" alt="wechat account: superopengl" width={200} height="auto" />
+                  </Col>
+                  </Row>
                 </Col>
                 <Col style={{textAlign: 'left', paddingTop: '2rem'}}>
                 <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><MdLanguage style={{position: 'relative', top: 3}} /> Website : <a href="https://www.techseeding.com.au/" style={{color: 'white'}}>https://www.techseeding.com.au</a></Title>
                 <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><MailOutlined /> <Trans i18nKey="home.contact.email" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a href="mailto:mr.shaojun@gmail.com" style={{color: 'white'}}>mr.shaojun@gmail.com</a></Title>
-                <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /> &nbsp;&nbsp;&nbsp;: 04 0558 1228</Title>
+                <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /> &nbsp;&nbsp;&nbsp;: +61 4 0558 1228</Title>
                 <Title level={4} style={{fontSize: '1.2rem', textAlign: 'left'}}><WechatOutlined /> <Trans i18nKey="home.contact.wechat" /> : superopengl</Title>
                 </Col>
               </Row>
@@ -311,7 +322,7 @@ class HomePageRaw extends React.Component {
             <HomeFeatureArea style={{ paddingBottom: 0 }}></HomeFeatureArea>
           </section>
         </ContentStyled>
-        {/* <HomeFooter></HomeFooter> */}
+        <HomeFooter></HomeFooter>
         {shouldShowContact && <Affix style={{ position: 'fixed', bottom: 30, right: 30 }}>
           <AffixContactButton type="primary" shape="circle" size="large" onClick={() => this.openContactForm()}>
             <AiOutlineMessage size={36} />

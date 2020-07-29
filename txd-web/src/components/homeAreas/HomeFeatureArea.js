@@ -43,7 +43,7 @@ class HomeFeatureArea extends React.Component {
         backgroundColor: '#22075e',
         color: '#f0f0f0',
         paddingBottom: 0,
-        padding: '6rem 0'
+        padding: '5rem 0 3rem'
       }
     }
 
@@ -65,7 +65,7 @@ class HomeFeatureArea extends React.Component {
           <p level={4} style={{fontSize: '1.2rem'}}><MdLanguage style={{position: 'relative', top: 3}} /> Website : <a href="https://www.techseeding.com.au/" style={{color: 'white'}}>https://www.techseeding.com.au</a></p>
 
             <p><MailOutlined /> <Trans i18nKey="home.contact.email" /> : <a href="mailto:mr.shaojun@gmail.com">mr.shaojun@gmail.com</a></p>
-            <p><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /> : 04 0558 1228</p>
+            <p><PhoneOutlined /> <Trans i18nKey="home.contact.phone" /> : +61 4 0558 1228</p>
             <p><WechatOutlined /> <Trans i18nKey="home.contact.wechat" /> : superopengl</p>
             {/* <p><img src="images/wechat_logo_qr.jpg" alt="wechat account: superopengl" width={160} height="auto" /></p> */}
           </section>
